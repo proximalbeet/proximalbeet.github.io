@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProxAI Privacy Policy</title>
+<style>
+  :root { --bg: #fafaf9; --fg: #1c1917; --muted: #57534e; --link: #1d4ed8; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1c1917; --fg: #f5f5f4; --muted: #a8a29e; --link: #93c5fd; } }
+  body { background: var(--bg); color: var(--fg); font: 17px/1.6 system-ui, sans-serif; margin: 0; }
+  main { max-width: 40rem; margin: 0 auto; padding: 3rem 1rem; }
+  h1 { margin-bottom: .25rem; } p.updated { color: var(--muted); margin-top: 0; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  a { color: var(--link); }
+</style>
+</head>
+<body>
+<main>
+  <h1>ProxAI Privacy Policy</h1>
+  <p class="updated">Last updated: October 18, 2026</p>
+
+  <p>ProxAI is a personal assistant used only by its owner. It is not offered to anyone else.
+    This page explains what it does with Google user data.</p>
+
+  <h2>What it accesses</h2>
+  <ul>
+    <li><strong>Calendars it creates</strong> (<code>calendar.app.created</code>): it creates one
+      calendar named "ProxAI" and can add, move and delete events on that calendar only.</li>
+    <li><strong>Your events, read-only</strong> (<code>calendar.events.readonly</code>): it reads the
+      title, time and location of events on calendars the owner chooses, to answer questions such as
+      "what's on my calendar tomorrow". It cannot change or delete these events.</li>
+    <li><strong>Free/busy times</strong> (<code>calendar.freebusy</code>): when the owner is busy, to
+      avoid double-booking.</li>
+  </ul>
+  <p>It does not access Gmail, Drive, Contacts or any other Google service, and it never sends
+    invitations.</p>
+
+  <h2>How the data is used and stored</h2>
+  <p>Calendar data is fetched on request and used only to answer the owner. The sign-in token is
+    stored on the owner's own computer, readable only by the owner's account. Changes ProxAI makes to
+    its own calendar are logged locally on that computer.</p>
+  <p>To answer a question, the relevant calendar details may be sent to the AI model provider that
+    powers the assistant, as part of that one conversation. Google user data is not sold, shared
+    with anyone else, or used for advertising or to train AI models.</p>
+
+  <h2>Removing access</h2>
+  <p>The owner can remove ProxAI's access at any time at
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, and
+    delete the "ProxAI" calendar in Google Calendar.</p>
+
+  <h2>Contact</h2>
+  <p>ProxAI is maintained by <a href="https://github.com/proximalbeet">proximalbeet</a> on GitHub.</p>
+</main>
+</body>
+</html>
