@@ -17,7 +17,7 @@
 <body>
 <main>
   <h1>ProxAI Privacy Policy</h1>
-  <p class="updated">Last updated: October 29, 2026</p>
+  <p class="updated">Last updated: October 30, 2026</p>
 
   <p>ProxAI is a personal assistant used only by its owner. It is not offered to anyone else.
     This page explains what it does with Google user data.</p>
@@ -37,15 +37,22 @@
       replies stop further email to that business.</li>
     <li><strong>Sending from that mailbox</strong> (<code>gmail.send</code>): it sends an email only after
       the owner has read that exact message and approved it.</li>
+    <li><strong>Files it creates in Google Drive</strong> (<code>drive.file</code>): one folder named
+      "ProxAI backups" and the nightly backup files it puts there, which are encrypted on the owner's
+      computer before upload. With this access it can't see or open any other file in the owner's Drive.</li>
   </ul>
   <p>It cannot delete, archive, label or change any email. It does not access the owner's personal
-    Gmail, Drive, Contacts or any other Google service, and it never sends calendar invitations.</p>
+    Gmail, any other Drive files, Contacts or any other Google service, and it never sends calendar
+    invitations.</p>
 
   <h2>How the data is used and stored</h2>
   <p>Calendar data is fetched on request and used only to answer the owner. Business email is checked
     every few minutes; each message is filed with the matching business contact on the owner's own
     computer. The sign-in tokens are stored on that computer, readable only by the owner's account.
-    Changes ProxAI makes to its own calendar, and the emails it sends, are logged locally there.</p>
+    Changes ProxAI makes to its own calendar, and the emails it sends, are logged locally there. Each
+    night, an encrypted copy of the owner's business records goes to the "ProxAI backups" folder and
+    is read back once to check it. Only the owner holds the passphrase that opens it, and the copies are
+    never sent to the AI model provider.</p>
   <p>To answer a question or draft a reply for the owner to approve, the relevant calendar details or
     email text may be sent to the AI model provider that powers the assistant, as part of that one
     task. Google user data is not sold, shared with anyone else, or used for advertising or to train
@@ -57,7 +64,8 @@
   <h2>Removing access</h2>
   <p>The owner can remove ProxAI's access at any time at
     <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> (in each
-    account it was given), and delete the "ProxAI" calendar in Google Calendar.</p>
+    account it was given), delete the "ProxAI" calendar in Google Calendar, and delete the "ProxAI
+    backups" folder in Google Drive.</p>
 
   <h2>Contact</h2>
   <p>ProxAI is maintained by <a href="https://github.com/proximalbeet">proximalbeet</a> on GitHub.</p>
