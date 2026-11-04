@@ -19,6 +19,7 @@
     <a class="mark" href="/">One Touch <span>Agents</span></a>
     <nav class="nav" aria-label="Sections">
       <a href="#agents">Agents</a>
+      <a href="#build">Build yours</a>
       <a href="#how">How it works</a>
       <a href="#rules">The rules</a>
       <a href="#contact">Contact</a>
@@ -131,50 +132,75 @@
     </div>
   </section>
 
-  <section class="band" id="build">
+  <section class="builder" id="build">
     <div class="wrap">
-      <p class="eyebrow">How the agents fit together</p>
-      <h2>One agent. Add what you need.</h2>
-      <p class="band-sub">Start with the agent that fixes your biggest gap, then add pieces as your business needs them. One monthly plan, with a fixed price in writing.</p>
-
-      <div class="base">
-        <article>
-          <h3>Front desk</h3>
-          <p>Answers your customers on your website, by text and by email.</p>
-        </article>
-        <article>
-          <h3>Phone receptionist</h3>
-          <p>Picks up the calls you can't and takes a clear message.</p>
-        </article>
-        <article>
-          <h3>Job-site manager</h3>
-          <p>Keeps your jobs, crew updates and job photos in one place, for you and your crew only.</p>
-        </article>
-      </div>
-
-      <div class="addons">
-        <h3>Add-ons</h3>
-        <ul>
-          <li>Booking from your calendar</li>
-          <li>Missed-call text-back <span>free with the receptionist</span></li>
-          <li>Review requests after each job</li>
-          <li>Quotes in the chat</li>
-          <li>Jobber or Housecall Pro</li>
-          <li>Social posts from your jobs <span>later</span></li>
-        </ul>
-      </div>
-
-      <div class="combos">
-        <div class="combo">
-          <b>Never miss a lead</b>
-          <p class="sum"><span>Front desk</span> + <span>Text-back</span> + <span>Booking</span></p>
-          <p>Every caller and visitor gets an answer and a time to talk.</p>
+      <h2>Build your agent</h2>
+      <p class="sub">Pick the agent that fixes your biggest gap, then add what fits. The work order shows what it would handle in a day.</p>
+      <div class="bld">
+        <div class="bld-controls">
+          <fieldset>
+            <legend><span class="step">1</span> Pick an agent</legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="base" id="b-desk" checked><b>Front desk</b><span>Website chat, text and email</span></label>
+              <label class="opt"><input type="radio" name="base" id="b-phone"><b>Phone receptionist</b><span>Answers the calls you can't</span></label>
+              <label class="opt"><input type="radio" name="base" id="b-site"><b>Job-site manager</b><span>Jobs, crew and photos, for you and your crew only</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend><span class="step">2</span> Add what fits</legend>
+            <div class="togs">
+              <label class="tog"><input type="checkbox" id="a-book">Booking from your calendar</label>
+              <label class="tog"><input type="checkbox" id="a-text">Missed-call text-back</label>
+              <label class="tog"><input type="checkbox" id="a-rev">Review requests</label>
+              <label class="tog"><input type="checkbox" id="a-quote">Quotes in the chat</label>
+              <label class="tog"><input type="checkbox" id="a-crm">Jobber or Housecall Pro</label>
+              <label class="tog"><input type="checkbox" id="a-social">Social posts <small>Later</small></label>
+            </div>
+          </fieldset>
+          <p class="picks">Common picks: <b>Never miss a lead</b> (front desk, text-back, booking) and <b>Get more reviews</b> (front desk, review requests, social posts).</p>
         </div>
-        <div class="combo">
-          <b>Get more reviews</b>
-          <p class="sum"><span>Front desk</span> + <span>Review requests</span> + <span>Social posts</span></p>
-          <p>Happy customers leave reviews, and your best work shows up online after you OK it.</p>
-        </div>
+
+        <figure class="ticket" aria-label="Example work order for a roofing company">
+          <figcaption><span><b>Bayview Roofing</b> · a day with your agent</span><span class="tag">Example</span></figcaption>
+          <ol class="t t-desk">
+            <li class="x x-text"><time>7:10 am</time><span>You miss a call on the way to a job. They get a text right away, and answer it.<em>Text-back</em></span></li>
+            <li><time>9:42 pm</time><span>Someone asks on your website: "Do you fix leaks around chimneys?"</span></li>
+            <li><time>9:42 pm</time><span>It answers from your facts: yes, and Hancock is in your area.</span></li>
+            <li class="x x-quote"><time>9:43 pm</time><span>It gives them the starting price from your price list.<em>Quotes</em></span></li>
+            <li><time>9:43 pm</time><span>It takes their name, number and the job.</span></li>
+            <li class="x x-book"><time>9:44 pm</time><span>It offers Tuesday 4:00 or Wednesday 9:00 from your calendar, for you to confirm.<em>Booking</em></span></li>
+            <li><time>9:44 pm</time><span>You get a text with the details.</span></li>
+            <li class="x x-crm"><time>9:44 pm</time><span>The lead is added to Jobber.<em>Jobber</em></span></li>
+            <li class="x x-rev"><time>After the job</time><span>The customer gets a review request, and one reminder.<em>Reviews</em></span></li>
+            <li class="x x-social"><time>After the job</time><span>You text it photos of the finished roof. It drafts a post for you to OK.<em>Social</em></span></li>
+          </ol>
+          <ol class="t t-phone">
+            <li><time>10:15 am</time><span>Your phone rings while you're up on a roof. It picks up.</span></li>
+            <li><time>10:15 am</time><span>It says it's your AI assistant and asks what they need.</span></li>
+            <li class="x x-quote"><time>10:16 am</time><span>It tells them the starting price from your price list.<em>Quotes</em></span></li>
+            <li><time>10:17 am</time><span>It takes their name, number, address and the job.</span></li>
+            <li class="x x-book"><time>10:17 am</time><span>It offers a time to look at the job, for you to confirm.<em>Booking</em></span></li>
+            <li class="x x-text"><time>10:18 am</time><span>They get a text confirming their message. Included with the receptionist.<em>Text-back</em></span></li>
+            <li><time>10:18 am</time><span>You get the message as a text.</span></li>
+            <li class="x x-crm"><time>10:18 am</time><span>The call is logged in Jobber.<em>Jobber</em></span></li>
+            <li class="x x-rev"><time>After the job</time><span>The customer gets a review request, and one reminder.<em>Reviews</em></span></li>
+            <li class="x x-social"><time>After the job</time><span>You text it photos of the finished roof. It drafts a post for you to OK.<em>Social</em></span></li>
+          </ol>
+          <ol class="t t-site">
+            <li><time>6:45 am</time><span>You and your crew get today's jobs and addresses.</span></li>
+            <li class="x x-book"><time>6:45 am</time><span>Jobs booked on your calendar show up on the list.<em>Booking</em></span></li>
+            <li><time>12:30 pm</time><span>The crew texts photos of the tear-off. They're filed on the job.</span></li>
+            <li><time>3:50 pm</time><span>The crew texts "done on Maple St". The job is marked finished.</span></li>
+            <li class="x x-crm"><time>3:50 pm</time><span>The job and its notes are updated in Jobber.<em>Jobber</em></span></li>
+            <li><time>5:00 pm</time><span>You get the day's update: what's done, what's left, any problems.</span></li>
+            <li class="x x-rev"><time>5:00 pm</time><span>The Maple St customer gets a review request.<em>Reviews</em></span></li>
+            <li class="x x-social"><time>5:00 pm</time><span>The finished-job photos become a post for you to OK.<em>Social</em></span></li>
+            <li class="x x-text na"><time>Note</time><span>Text-back works with the front desk or the receptionist. This agent talks only to you and your crew.<em>Text-back</em></span></li>
+            <li class="x x-quote na"><time>Note</time><span>Quotes work with the front desk or the receptionist.<em>Quotes</em></span></li>
+          </ol>
+          <p class="hint">Tick an add-on to see what it adds.</p>
+          <p class="ticket-foot">An example. Each agent opens as a pilot first, with a fixed price in writing.</p>
+        </figure>
       </div>
     </div>
   </section>
