@@ -169,14 +169,28 @@ footer a { color: var(--ink-2); }
 .sub-opt { border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.8rem; font-size: 0.9rem; }
 .sub-opt:has(input:checked) { border-color: var(--ink); background: var(--hivis); color: var(--hivis-ink); font-weight: 650; }
 
-/* the way to the quiz page */
-.quiz-btn { display: flex; align-items: center; gap: 0.7rem; margin: 0 0 1.6rem; padding: 0.8rem 1rem; border: 2px dashed var(--ink-2);
-  border-radius: 0.8rem; background: var(--surface); color: var(--ink); text-decoration: none; }
-.quiz-btn:hover { border-color: var(--ink); background: var(--tint); }
-.qmark { display: inline-grid; place-items: center; flex: none; width: 1.6rem; height: 1.6rem; border-radius: 50%;
-  background: var(--hivis); color: var(--hivis-ink); font-weight: 850; }
-.quiz-link { margin: 1rem 0 0; font-weight: 650; }
-.quiz-link a { color: var(--hivis); }
+/* the quiz: a big button opens it over the page (popover, no script) */
+.quiz-big { display: flex; align-items: center; gap: 0.85rem; width: 100%; margin: 0 0 1.6rem; padding: 1rem 1.2rem; border: 0;
+  border-radius: 0.9rem; background: var(--hivis); color: var(--hivis-ink); font: inherit; font-weight: 850; font-size: 1.15rem;
+  text-align: left; cursor: pointer; box-shadow: 0 5px 0 rgba(21, 24, 29, 0.22); }
+.quiz-big small { display: block; font-weight: 600; font-size: 0.9rem; margin-top: 0.15rem; }
+.quiz-big:hover { filter: brightness(1.05); }
+.quiz-big:active { transform: translateY(2px); box-shadow: 0 3px 0 rgba(21, 24, 29, 0.22); }
+.quiz-big:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.qmark { display: inline-grid; place-items: center; flex: none; width: 1.9rem; height: 1.9rem; border-radius: 50%;
+  background: var(--hivis-ink); color: var(--hivis); font-weight: 850; }
+.quiz-link { margin: 1rem 0 0; }
+.quiz-link button { background: none; border: 0; padding: 0; font: inherit; font-weight: 650; color: var(--hivis); text-decoration: underline; cursor: pointer; }
+.quiz-pop { width: min(48rem, calc(100vw - 1.5rem)); max-height: calc(100dvh - 1.5rem); margin: auto; padding: 0;
+  border: 1px solid var(--line); border-radius: 1rem; background: var(--bg); color: var(--ink); overflow: auto; }
+.quiz-pop::backdrop { background: rgba(11, 13, 16, 0.65); }
+.quiz-head { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem;
+  background: var(--night); color: var(--night-ink); }
+.quiz-head h2 { margin: 0; font-size: 1.15rem; color: var(--night-ink); }
+.quiz-head p { margin: 0; color: var(--night-ink-2); font-size: 0.88rem; }
+.quiz-close { margin-left: auto; background: none; border: 1px solid var(--night-line); color: var(--night-ink); border-radius: 0.5rem;
+  padding: 0.35rem 0.75rem; font: inherit; cursor: pointer; }
+.quiz-pop .qz { padding: 1.2rem; }
 
 /* the work order */
 .ticket { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 0.9rem; overflow: hidden;
@@ -221,10 +235,7 @@ footer a { color: var(--ink-2); }
 @keyframes line-in { from { opacity: 0; transform: translateY(-4px); } }
 @media (prefers-reduced-motion: reduce) { .t li { animation: none !important; } }
 
-/* the quiz page: questions open one after another, the answer is worked out in CSS */
-.qp { max-width: 50rem; padding: 2.5rem 1rem 3.5rem; }
-.qp h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5rem; }
-.qp > p.sub { color: var(--ink-2); margin: 0 0 2rem; max-width: 56ch; }
+/* the quiz: questions open one after another, the answer is worked out in CSS */
 .qs { background: var(--surface); border: 1px solid var(--line) !important; border-radius: 0.9rem; padding: 1.1rem 1.2rem 1.2rem !important; }
 .qs legend { float: left; width: 100%; margin-bottom: 0.85rem; }
 .qs legend small { margin-left: auto; color: var(--ink-2); font-weight: 650; font-size: 0.8rem; }
@@ -246,7 +257,8 @@ footer a { color: var(--ink-2); }
 .recs li b { color: var(--night-ink); }
 .recs.notes li { border-left-color: var(--night-line); }
 .qbtns { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 1.5rem; }
-.qbtns .btn { color: var(--night-ink); }
+.qbtns .btn { color: var(--night-ink); font: inherit; font-weight: 750; cursor: pointer; background: transparent; }
+.qbtns .btn.primary { background: var(--hivis); }
 .qbtns .btn.primary { color: var(--hivis-ink); }
 .reset { background: none; border: 0; color: var(--night-ink-2); text-decoration: underline; font: inherit; cursor: pointer; padding: 0.5rem; }
 .qres .r, .qres .rec, .qres .grp, .q-next { display: none; }
@@ -265,17 +277,17 @@ footer a { color: var(--ink-2); }
   .qz:has(#z-one:checked) .g-packs, .qz:has(#z-full:checked) .g-packs { display: block; }
   .qz:has(#w-quote:checked) .k-quote,
   .qz:has(#f-web:checked, #f-angi:checked, #w-sched:checked) .k-intake,
-  .qz:has(#w-crew:checked, #w-rev:checked, #r-remod:checked, #r-roof:checked) .k-photo,
+  .qz:has(#w-crew:checked, #w-rev:checked, #f-social:checked, #r-remod:checked, #r-roof:checked) .k-photo,
   .qz:has(#w-calls:checked, #f-call:checked) .k-textback { display: list-item; }
   /* agents */
   .qz:has(#f-call:checked, #w-calls:checked) .k-phone,
-  .qz:has(#f-web:checked, #f-angi:checked, #w-sched:checked, #w-quote:checked, #w-rev:checked, #f-google:checked) .k-desk,
+  .qz:has(#f-web:checked, #f-angi:checked, #w-sched:checked, #w-quote:checked, #w-rev:checked, #f-google:checked, #f-social:checked) .k-desk,
   .qz:has(#s-15:checked, #s-16:checked, #w-crew:checked) .k-site,
   .qz:has(#w-pay:checked, #u-qb:checked) .k-office { display: list-item; }
   /* packs */
   .qz:has(#w-calls:checked, #w-sched:checked, #f-angi:checked, #w-quote:checked) .k-win,
   .qz:has(#w-pay:checked, #u-qb:checked) .k-paid,
-  .qz:has(#w-rev:checked, #f-google:checked, #f-word:checked) .k-rep,
+  .qz:has(#w-rev:checked, #f-google:checked, #f-word:checked, #f-social:checked) .k-rep,
   .qz:has(#w-crew:checked, #r-roof:checked, #r-lawn:checked, #r-remod:checked) .k-run { display: list-item; }
   /* notes: the trade, the tools, the extras */
   .qz:has(#r-roof:checked) .k-roof, .qz:has(#r-hvac:checked) .k-hvac, .qz:has(#r-remod:checked) .k-remod,
