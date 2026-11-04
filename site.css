@@ -238,7 +238,12 @@ footer a { color: var(--ink-2); }
 /* the quiz: questions open one after another, the answer is worked out in CSS */
 .qs { background: var(--surface); border: 1px solid var(--line) !important; border-radius: 0.9rem; padding: 1.1rem 1.2rem 1.2rem !important; }
 .qs legend { float: left; width: 100%; margin-bottom: 0.85rem; }
-.qs legend small { margin-left: auto; color: var(--ink-2); font-weight: 650; font-size: 0.8rem; }
+.qs legend small { margin-left: auto; color: var(--ink-2); font-weight: 650; font-size: 0.8rem; white-space: nowrap; }
+.qs legend .qtext { flex: 1 1 0; min-width: 0; }
+@media (max-width: 40rem) {
+  .qs legend { flex-wrap: wrap; }
+  .qs legend small { order: -1; flex-basis: 100%; margin: 0 0 0.35rem; text-transform: uppercase; letter-spacing: 0.07em; font-size: 0.72rem; }
+}
 .qs .opts, .qs .togs { clear: both; }
 .qs .togs { grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); }
 .qs .tog { background: var(--bg); }

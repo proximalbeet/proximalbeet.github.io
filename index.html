@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://onetouchagents.com/">
 <meta property="og:type" content="website">
 <meta name="color-scheme" content="light dark">
-<link rel="stylesheet" href="/site.css?v=6">
+<link rel="stylesheet" href="/site.css?v=7">
 </head>
 <body>
 <header class="top">
@@ -345,7 +345,7 @@
     </div>
     <form class="qz" action="#" onsubmit="return false">
       <fieldset class="qs qs1">
-        <legend><span class="step">1</span> What kind of work do you do? <small>1 of 6</small></legend>
+        <legend><span class="step">1</span><span class="qtext">What kind of work do you do?</span> <small>1 of 6</small></legend>
         <div class="opts">
           <label class="opt"><input type="radio" name="q1" id="r-roof"><span class="tx"><b>Roofing or siding</b></span></label>
           <label class="opt"><input type="radio" name="q1" id="r-hvac"><span class="tx"><b>Heating, cooling, plumbing or electrical</b></span></label>
@@ -357,7 +357,7 @@
       </fieldset>
 
       <fieldset class="qs qs2">
-        <legend><span class="step">2</span> How big is your team? <small>2 of 6</small></legend>
+        <legend><span class="step">2</span><span class="qtext">How big is your team?</span> <small>2 of 6</small></legend>
         <div class="togs">
           <label class="opt"><input type="radio" name="q2" id="s-1"><span class="tx"><b>Just me</b></span></label>
           <label class="opt"><input type="radio" name="q2" id="s-5"><span class="tx"><b>2 to 5</b></span></label>
@@ -368,7 +368,7 @@
       </fieldset>
 
       <fieldset class="qs qs3">
-        <legend><span class="step">3</span> Where do new customers find you? <small>3 of 6 · pick any</small></legend>
+        <legend><span class="step">3</span><span class="qtext">Where do new customers find you?</span> <small>3 of 6 · pick any</small></legend>
         <div class="togs">
           <label class="tog"><input type="checkbox" id="f-web"><span class="tx"><b>My website</b></span></label>
           <label class="tog"><input type="checkbox" id="f-call"><span class="tx"><b>Phone calls</b></span></label>
@@ -380,7 +380,7 @@
       </fieldset>
 
       <fieldset class="qs qs4">
-        <legend><span class="step">4</span> What takes too much of your time? <small>4 of 6 · pick any</small></legend>
+        <legend><span class="step">4</span><span class="qtext">What takes too much of your time?</span> <small>4 of 6 · pick any</small></legend>
         <div class="togs">
           <label class="tog"><input type="checkbox" id="w-calls"><span class="tx"><b>Missed calls and callbacks</b></span></label>
           <label class="tog"><input type="checkbox" id="w-quote"><span class="tx"><b>Writing quotes and estimates</b></span></label>
@@ -392,7 +392,7 @@
       </fieldset>
 
       <fieldset class="qs qs5">
-        <legend><span class="step">5</span> What do you run the business on? <small>5 of 6 · pick any</small></legend>
+        <legend><span class="step">5</span><span class="qtext">What do you run the business on?</span> <small>5 of 6 · pick any</small></legend>
         <div class="togs">
           <label class="tog"><input type="checkbox" id="u-jobber"><span class="tx"><b>Jobber</b></span></label>
           <label class="tog"><input type="checkbox" id="u-hcp"><span class="tx"><b>Housecall Pro</b></span></label>
@@ -403,7 +403,7 @@
       </fieldset>
 
       <fieldset class="qs qs6">
-        <legend><span class="step">6</span> How would you like to start? <small>6 of 6</small></legend>
+        <legend><span class="step">6</span><span class="qtext">How would you like to start?</span> <small>6 of 6</small></legend>
         <div class="opts">
           <label class="opt"><input type="radio" name="q6" id="z-small"><span class="tx"><b>Try one small tool first</b><span>One app on a smaller monthly plan</span></span></label>
           <label class="opt"><input type="radio" name="q6" id="z-one"><span class="tx"><b>One agent that takes a job off my plate</b><span>Add more once it's working</span></span></label>
@@ -484,7 +484,7 @@ document.getElementById('ask').addEventListener('click', function () {
   var lines = [];
   document.querySelectorAll('.qz fieldset').forEach(function (f) {
     var picked = [].map.call(f.querySelectorAll('input:checked'), function (i) { return i.closest('label').querySelector('b').textContent; });
-    if (picked.length) lines.push(f.querySelector('legend').firstChild.nextSibling.textContent.trim() + ' ' + picked.join(', '));
+    if (picked.length) lines.push(f.querySelector('.qtext').textContent + ' ' + picked.join(', '));
   });
   this.href = 'mailto:hello@onetouchagents.com?subject=' + encodeURIComponent('A free 20-minute look (quiz)') +
     '&body=' + encodeURIComponent('My quiz answers:\n' + lines.join('\n') + '\n\nMy name, business and best number:\n');
