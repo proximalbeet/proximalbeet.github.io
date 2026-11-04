@@ -29,6 +29,7 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--hivis); outline-o
 .nav { display: flex; gap: 0.4rem 1.1rem; flex-wrap: wrap; font-size: 0.95rem; }
 .nav a { color: var(--night-ink-2); text-decoration: none; }
 .nav a:hover { color: var(--night-ink); }
+@media (max-width: 30rem) { .nav { gap: 0.3rem 0.85rem; font-size: 0.9rem; } .nav a[href$="#rules"] { display: none; } }
 
 /* hero: dark like a work truck, with a caution-tape edge */
 .hero { background: var(--night); color: var(--night-ink); padding: 3rem 0 3.25rem; border-bottom: 0; position: relative; }
@@ -92,6 +93,10 @@ section > .wrap > p.sub { color: var(--ink-2); margin: 0 0 1.75rem; max-width: 6
 .price small { font-weight: 600; font-size: 0.95rem; color: var(--ink-2); letter-spacing: 0; }
 .price-box p { margin: 0.6rem 0 1rem; color: var(--ink-2); font-size: 0.95rem; }
 .price-box .btn { text-align: center; }
+.incl { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 0.4rem; font-size: 0.9rem; color: var(--ink-2); }
+.incl li { padding-left: 1.4rem; position: relative; }
+.incl li::before { content: ""; position: absolute; left: 0; top: 0.45rem; width: 0.8rem; height: 0.45rem;
+  border-left: 2.5px solid var(--link); border-bottom: 2.5px solid var(--link); transform: rotate(-45deg); }
 
 /* coming soon */
 .soon-h { font-size: 1.1rem; margin: 2.25rem 0 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-2); }
