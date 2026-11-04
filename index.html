@@ -95,7 +95,7 @@
         <article class="card soon">
           <span class="badge">Next</span>
           <h4>Agentic apps</h4>
-          <p>A simple page or form for your customers, with an AI agent doing the work behind it: quote and estimate builders, job-photo reports, intake forms.</p>
+          <p>A page, form or phone app with an AI agent doing the work behind it: quote and estimate builders, job-photo reports, intake forms, and an app for you and your crew.</p>
         </article>
         <article class="card soon">
           <span class="badge">Next</span>
@@ -135,70 +135,116 @@
   <section class="builder" id="build">
     <div class="wrap">
       <h2>Build your agent</h2>
-      <p class="sub">Pick the agent that fixes your biggest gap, then add what fits. The work order shows what it would handle in a day.</p>
+      <p class="sub">Pick the agent that fixes your biggest gap, then add the packs that fit. The work order shows what it would handle in a day.</p>
       <div class="bld">
         <div class="bld-controls">
+          <details class="quiz">
+            <summary>Not sure where to start? Answer two questions.</summary>
+            <div class="quiz-body">
+              <fieldset>
+                <legend>Where do you lose the most work?</legend>
+                <div class="qopts">
+                  <label class="qopt"><input type="radio" name="q1" id="q1-desk">Website visitors and messages that wait</label>
+                  <label class="qopt"><input type="radio" name="q1" id="q1-phone">Calls I can't pick up</label>
+                  <label class="qopt"><input type="radio" name="q1" id="q1-site">Keeping crews and jobs on track</label>
+                  <label class="qopt"><input type="radio" name="q1" id="q1-office">Paperwork and chasing payments</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>What would help most this year?</legend>
+                <div class="qopts">
+                  <label class="qopt"><input type="radio" name="q2" id="q2-win">More jobs</label>
+                  <label class="qopt"><input type="radio" name="q2" id="q2-paid">Getting paid faster</label>
+                  <label class="qopt"><input type="radio" name="q2" id="q2-rep">More reviews</label>
+                  <label class="qopt"><input type="radio" name="q2" id="q2-run">Smoother jobs</label>
+                </div>
+              </fieldset>
+              <p class="quiz-res"><b>Try</b> <span class="r r-desk">the front desk</span><span class="r r-phone">the phone receptionist</span><span class="r r-site">the job-site manager</span><span class="r r-office">the Office</span><span class="r-and"> with </span><span class="r r-win">Win more jobs</span><span class="r r-paid">Get paid faster</span><span class="r r-rep">Build your reputation</span><span class="r r-run">Run the job</span>. Pick them below to see their day.</p>
+            </div>
+          </details>
           <fieldset>
             <legend><span class="step">1</span> Pick an agent</legend>
             <div class="opts">
-              <label class="opt"><input type="radio" name="base" id="b-desk" checked><b>Front desk</b><span>Website chat, text and email</span></label>
-              <label class="opt"><input type="radio" name="base" id="b-phone"><b>Phone receptionist</b><span>Answers the calls you can't</span></label>
-              <label class="opt"><input type="radio" name="base" id="b-site"><b>Job-site manager</b><span>Jobs, crew and photos, for you and your crew only</span></label>
+              <label class="opt"><input type="radio" name="base" id="b-desk" checked><span class="tx"><b>Front desk</b><span>Website chat, text and email</span></span><small class="open">Opening soon</small></label>
+              <label class="opt"><input type="radio" name="base" id="b-phone"><span class="tx"><b>Phone receptionist</b><span>Answers the calls you can't</span></span><small class="open">Opening soon</small></label>
+              <label class="opt"><input type="radio" name="base" id="b-site"><span class="tx"><b>Job-site manager</b><span>Jobs, crew and photos, for you and your crew</span></span><small>Later</small></label>
+              <label class="opt"><input type="radio" name="base" id="b-office"><span class="tx"><b>Office</b><span>Your money, approvals and day, for you only</span></span><small>Later</small></label>
             </div>
           </fieldset>
           <fieldset>
-            <legend><span class="step">2</span> Add what fits</legend>
+            <legend><span class="step">2</span> Add packs</legend>
             <div class="togs">
-              <label class="tog"><input type="checkbox" id="a-book">Booking from your calendar</label>
-              <label class="tog"><input type="checkbox" id="a-text">Missed-call text-back</label>
-              <label class="tog"><input type="checkbox" id="a-rev">Review requests</label>
-              <label class="tog"><input type="checkbox" id="a-quote">Quotes in the chat</label>
-              <label class="tog"><input type="checkbox" id="a-crm">Jobber or Housecall Pro</label>
-              <label class="tog"><input type="checkbox" id="a-social">Social posts <small>Later</small></label>
+              <label class="tog"><input type="checkbox" id="a-win"><span class="tx"><b>Win more jobs</b><span>Booking, missed-call text-back, quote follow-ups, Angi leads</span></span></label>
+              <label class="tog"><input type="checkbox" id="a-paid"><span class="tx"><b>Get paid faster</b><span>Invoices with a pay link, payment reminders, receipts to QuickBooks</span></span></label>
+              <label class="tog"><input type="checkbox" id="a-rep"><span class="tx"><b>Build your reputation</b><span>Review requests, review replies, social posts</span></span></label>
+              <label class="tog"><input type="checkbox" id="a-run"><span class="tx"><b>Run the job</b><span>Updates for the homeowner, weather watch, material lists</span></span></label>
             </div>
           </fieldset>
-          <p class="picks">Common picks: <b>Never miss a lead</b> (front desk, text-back, booking) and <b>Get more reviews</b> (front desk, review requests, social posts).</p>
+          <fieldset>
+            <legend><span class="step">3</span> Extras</legend>
+            <div class="togs">
+              <label class="tog"><input type="checkbox" id="a-es"><span class="tx"><b>En español</b><span>Every agent works in English and Spanish</span></span></label>
+              <label class="tog"><input type="checkbox" id="a-app"><span class="tx"><b>Phone app</b><span>An app for you and your crew</span></span></label>
+            </div>
+          </fieldset>
         </div>
 
         <figure class="ticket" aria-label="Example work order for a roofing company">
           <figcaption><span><b>Bayview Roofing</b> · a day with your agent</span><span class="tag">Example</span></figcaption>
           <ol class="t t-desk">
-            <li class="x x-text"><time>7:10 am</time><span>You miss a call on the way to a job. They get a text right away, and answer it.<em>Text-back</em></span></li>
+            <li class="x x-win"><time>7:10 am</time><span>You miss a call on the way to a job. They get a text right away.<em>Win more jobs</em></span></li>
             <li><time>9:42 pm</time><span>Someone asks on your website: "Do you fix leaks around chimneys?"</span></li>
             <li><time>9:42 pm</time><span>It answers from your facts: yes, and Hancock is in your area.</span></li>
-            <li class="x x-quote"><time>9:43 pm</time><span>It gives them the starting price from your price list.<em>Quotes</em></span></li>
+            <li class="x x-es"><time>9:43 pm</time><span>Another visitor writes in Spanish. It answers in Spanish, and your summary stays in English.<em>Español</em></span></li>
             <li><time>9:43 pm</time><span>It takes their name, number and the job.</span></li>
-            <li class="x x-book"><time>9:44 pm</time><span>It offers Tuesday 4:00 or Wednesday 9:00 from your calendar, for you to confirm.<em>Booking</em></span></li>
+            <li class="x x-win"><time>9:44 pm</time><span>It offers Tuesday 4:00 or Wednesday 9:00 from your calendar, for you to confirm.<em>Win more jobs</em></span></li>
             <li><time>9:44 pm</time><span>You get a text with the details.</span></li>
-            <li class="x x-crm"><time>9:44 pm</time><span>The lead is added to Jobber.<em>Jobber</em></span></li>
-            <li class="x x-rev"><time>After the job</time><span>The customer gets a review request, and one reminder.<em>Reviews</em></span></li>
-            <li class="x x-social"><time>After the job</time><span>You text it photos of the finished roof. It drafts a post for you to OK.<em>Social</em></span></li>
+            <li class="x x-app"><time>9:44 pm</time><span>The lead pops up in your phone app. Tap to call back.<em>Phone app</em></span></li>
+            <li class="x x-win"><time>3 days later</time><span>No answer on your quote yet. It sends a friendly check-in.<em>Win more jobs</em></span></li>
+            <li class="x x-rep"><time>After the job</time><span>The customer gets a review request, and one reminder.<em>Reputation</em></span></li>
+            <li class="x x-paid na"><time>Note</time><span>Invoices and payments are in the Office agent.<em>Get paid faster</em></span></li>
+            <li class="x x-run na"><time>Note</time><span>Running the job is the job-site manager's work.<em>Run the job</em></span></li>
           </ol>
           <ol class="t t-phone">
             <li><time>10:15 am</time><span>Your phone rings while you're up on a roof. It picks up.</span></li>
             <li><time>10:15 am</time><span>It says it's your AI assistant and asks what they need.</span></li>
-            <li class="x x-quote"><time>10:16 am</time><span>It tells them the starting price from your price list.<em>Quotes</em></span></li>
+            <li class="x x-es"><time>10:15 am</time><span>"Para español, oprima 2." Spanish callers get the whole call in Spanish.<em>Español</em></span></li>
             <li><time>10:17 am</time><span>It takes their name, number, address and the job.</span></li>
-            <li class="x x-book"><time>10:17 am</time><span>It offers a time to look at the job, for you to confirm.<em>Booking</em></span></li>
-            <li class="x x-text"><time>10:18 am</time><span>They get a text confirming their message. Included with the receptionist.<em>Text-back</em></span></li>
+            <li class="x x-win"><time>10:17 am</time><span>It offers a time to look at the job, for you to confirm.<em>Win more jobs</em></span></li>
+            <li class="x x-win"><time>10:18 am</time><span>They get a text confirming their message.<em>Win more jobs</em></span></li>
             <li><time>10:18 am</time><span>You get the message as a text.</span></li>
-            <li class="x x-crm"><time>10:18 am</time><span>The call is logged in Jobber.<em>Jobber</em></span></li>
-            <li class="x x-rev"><time>After the job</time><span>The customer gets a review request, and one reminder.<em>Reviews</em></span></li>
-            <li class="x x-social"><time>After the job</time><span>You text it photos of the finished roof. It drafts a post for you to OK.<em>Social</em></span></li>
+            <li class="x x-app"><time>10:18 am</time><span>The message pops up in your phone app, with the recording's summary.<em>Phone app</em></span></li>
+            <li class="x x-rep"><time>After the job</time><span>The customer gets a review request, and one reminder.<em>Reputation</em></span></li>
+            <li class="x x-paid na"><time>Note</time><span>Invoices and payments are in the Office agent.<em>Get paid faster</em></span></li>
+            <li class="x x-run na"><time>Note</time><span>Running the job is the job-site manager's work.<em>Run the job</em></span></li>
           </ol>
           <ol class="t t-site">
+            <li class="x x-run"><time>6:00 am</time><span>Rain is coming Thursday. It drafts a text moving the Oak Ave job to Friday, for you to OK.<em>Run the job</em></span></li>
             <li><time>6:45 am</time><span>You and your crew get today's jobs and addresses.</span></li>
-            <li class="x x-book"><time>6:45 am</time><span>Jobs booked on your calendar show up on the list.<em>Booking</em></span></li>
+            <li class="x x-app"><time>6:45 am</time><span>Your crew opens the app: today's jobs, a camera button and "done".<em>Phone app</em></span></li>
+            <li class="x x-es"><time>6:45 am</time><span>Crew members who want it get their messages in Spanish.<em>Español</em></span></li>
+            <li class="x x-run"><time>7:30 am</time><span>The Maple St homeowner gets "the crew is on the way".<em>Run the job</em></span></li>
             <li><time>12:30 pm</time><span>The crew texts photos of the tear-off. They're filed on the job.</span></li>
+            <li class="x x-paid"><time>12:40 pm</time><span>The crew texts a supply-house receipt. It goes to QuickBooks, flagged for you to check.<em>Get paid faster</em></span></li>
             <li><time>3:50 pm</time><span>The crew texts "done on Maple St". The job is marked finished.</span></li>
-            <li class="x x-crm"><time>3:50 pm</time><span>The job and its notes are updated in Jobber.<em>Jobber</em></span></li>
+            <li class="x x-run"><time>3:50 pm</time><span>The homeowner gets "done", with the photos you OK'd.<em>Run the job</em></span></li>
             <li><time>5:00 pm</time><span>You get the day's update: what's done, what's left, any problems.</span></li>
-            <li class="x x-rev"><time>5:00 pm</time><span>The Maple St customer gets a review request.<em>Reviews</em></span></li>
-            <li class="x x-social"><time>5:00 pm</time><span>The finished-job photos become a post for you to OK.<em>Social</em></span></li>
-            <li class="x x-text na"><time>Note</time><span>Text-back works with the front desk or the receptionist. This agent talks only to you and your crew.<em>Text-back</em></span></li>
-            <li class="x x-quote na"><time>Note</time><span>Quotes work with the front desk or the receptionist.<em>Quotes</em></span></li>
+            <li class="x x-rep"><time>5:00 pm</time><span>The Maple St customer gets a review request, and the photos become a post for you to OK.<em>Reputation</em></span></li>
+            <li class="x x-win na"><time>Note</time><span>Winning new jobs is the front desk's and the receptionist's work.<em>Win more jobs</em></span></li>
           </ol>
-          <p class="hint">Tick an add-on to see what it adds.</p>
+          <ol class="t t-office">
+            <li><time>6:30 am</time><span>Your morning brief: today's jobs, new leads and what's waiting on you.</span></li>
+            <li><time>8:10 am</time><span>A voice note from the truck: "Call Dave back about the chimney." It's on today's list.</span></li>
+            <li class="x x-paid"><time>9:00 am</time><span>The Maple St invoice, with a pay link, is ready for you to OK.<em>Get paid faster</em></span></li>
+            <li class="x x-paid"><time>9:05 am</time><span>The Oak Ave invoice is 5 days late. It sends a friendly reminder.<em>Get paid faster</em></span></li>
+            <li class="x x-rep"><time>11:20 am</time><span>A new 5-star Google review. It drafts a reply for you to OK.<em>Reputation</em></span></li>
+            <li class="x x-app"><time>12:00 pm</time><span>Everything waiting on your OK is one list in your phone app. Tap yes or no.<em>Phone app</em></span></li>
+            <li class="x x-win"><time>2:00 pm</time><span>Past customers who signed up get an email: "Time for your gutter cleaning."<em>Win more jobs</em></span></li>
+            <li class="x x-paid"><time>4:40 pm</time><span>Dave paid by card. The invoice is marked paid.<em>Get paid faster</em></span></li>
+            <li class="x x-es"><time>Any time</time><span>Talk to it in English or Spanish.<em>Español</em></span></li>
+            <li class="x x-run na"><time>Note</time><span>The job-site manager's daily update lands in your brief.<em>Run the job</em></span></li>
+          </ol>
+          <p class="hint">Tick a pack to see what it adds.</p>
           <p class="ticket-foot">An example. Each agent opens as a pilot first, with a fixed price in writing.</p>
         </figure>
       </div>
