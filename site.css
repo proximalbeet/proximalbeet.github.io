@@ -73,6 +73,8 @@ section > .wrap > p.sub { color: var(--ink-2); margin: 0 0 1.75rem; max-width: 6
 .badge { display: inline-block; font-size: 0.74rem; font-weight: 750; text-transform: uppercase; letter-spacing: 0.07em;
   padding: 0.18rem 0.6rem; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-2); }
 .badge.ready { background: var(--hivis); border-color: var(--hivis); color: var(--hivis-ink); }
+.badge.open { border-color: var(--hivis); color: var(--ink); background: var(--tint); }
+.card.later { opacity: 0.8; }
 
 /* the ready agent */
 .feature { display: grid; gap: 1.5rem; grid-template-columns: 1fr; background: var(--bg); border: 2px solid var(--ink);
