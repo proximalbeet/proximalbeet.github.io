@@ -38,6 +38,7 @@
           <a class="btn primary" href="mailto:hello@onetouchagents.com?subject=A%20free%2020-minute%20look">Get a free 20-minute look</a>
           <a class="btn ghost" href="#agents">See the agents</a>
         </div>
+        <p class="quiz-link"><a href="/quiz">Not sure what you need? Take the quiz</a></p>
         <p class="call">Rather talk? Call <a href="tel:+12312611578">(231) 261-1578</a></p>
         <p class="where">Built by Nathan Kenney, who works in the siding trade. Michigan, and remote anywhere.</p>
       </div>
@@ -135,40 +136,37 @@
   <section class="builder" id="build">
     <div class="wrap">
       <h2>Build your agent</h2>
-      <p class="sub">Pick the agent that fixes your biggest gap, then add the packs that fit. The work order shows what it would handle in a day.</p>
+      <p class="sub">Pick what you need, then add the packs that fit. The work order shows what it would handle in a day.</p>
       <div class="bld">
         <div class="bld-controls">
-          <details class="quiz">
-            <summary>Not sure where to start? Answer two questions.</summary>
-            <div class="quiz-body">
-              <fieldset>
-                <legend>Where do you lose the most work?</legend>
-                <div class="qopts">
-                  <label class="qopt"><input type="radio" name="q1" id="q1-desk">Website visitors and messages that wait</label>
-                  <label class="qopt"><input type="radio" name="q1" id="q1-phone">Calls I can't pick up</label>
-                  <label class="qopt"><input type="radio" name="q1" id="q1-site">Keeping crews and jobs on track</label>
-                  <label class="qopt"><input type="radio" name="q1" id="q1-office">Paperwork and chasing payments</label>
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend>What would help most this year?</legend>
-                <div class="qopts">
-                  <label class="qopt"><input type="radio" name="q2" id="q2-win">More jobs</label>
-                  <label class="qopt"><input type="radio" name="q2" id="q2-paid">Getting paid faster</label>
-                  <label class="qopt"><input type="radio" name="q2" id="q2-rep">More reviews</label>
-                  <label class="qopt"><input type="radio" name="q2" id="q2-run">Smoother jobs</label>
-                </div>
-              </fieldset>
-              <p class="quiz-res"><b>Try</b> <span class="r r-desk">the front desk</span><span class="r r-phone">the phone receptionist</span><span class="r r-site">the job-site manager</span><span class="r r-office">the Office</span><span class="r-and"> with </span><span class="r r-win">Win more jobs</span><span class="r r-paid">Get paid faster</span><span class="r r-rep">Build your reputation</span><span class="r r-run">Run the job</span>. Pick them below to see their day.</p>
-            </div>
-          </details>
+          <a class="quiz-btn" href="/quiz"><span class="qmark" aria-hidden="true">?</span><span>Not sure what you need? <b>Take the quiz</b>: six quick questions about your work.</span></a>
           <fieldset>
-            <legend><span class="step">1</span> Pick an agent</legend>
+            <legend><span class="step">1</span> Pick a type</legend>
             <div class="opts">
-              <label class="opt"><input type="radio" name="base" id="b-desk" checked><span class="tx"><b>Front desk</b><span>Website chat, text and email</span></span><small class="open">Opening soon</small></label>
-              <label class="opt"><input type="radio" name="base" id="b-phone"><span class="tx"><b>Phone receptionist</b><span>Answers the calls you can't</span></span><small class="open">Opening soon</small></label>
-              <label class="opt"><input type="radio" name="base" id="b-site"><span class="tx"><b>Job-site manager</b><span>Jobs, crew and photos, for you and your crew</span></span><small>Later</small></label>
-              <label class="opt"><input type="radio" name="base" id="b-office"><span class="tx"><b>Office</b><span>Your money, approvals and day, for you only</span></span><small>Later</small></label>
+              <div class="type">
+                <label class="opt"><input type="radio" name="type" id="t-cust" checked><span class="tx"><b>Customer agents</b><span>Answer your customers on your website, by text, by email and on the phone</span></span><small class="open">Opening soon</small></label>
+                <div class="subs">
+                  <label class="sub-opt"><input type="radio" name="cust" id="c-desk" checked>Website, text and email</label>
+                  <label class="sub-opt"><input type="radio" name="cust" id="c-phone">Phone calls</label>
+                  <label class="sub-opt"><input type="radio" name="cust" id="c-both">Both</label>
+                </div>
+              </div>
+              <div class="type">
+                <label class="opt"><input type="radio" name="type" id="t-team"><span class="tx"><b>Team agents</b><span>Work with you and your crew: jobs, photos, money and approvals</span></span><small>Later</small></label>
+                <div class="subs">
+                  <label class="sub-opt"><input type="radio" name="team" id="m-site" checked>Jobs and crew</label>
+                  <label class="sub-opt"><input type="radio" name="team" id="m-office">Money and approvals, for you only</label>
+                  <label class="sub-opt"><input type="radio" name="team" id="m-both">Both</label>
+                </div>
+              </div>
+              <div class="type">
+                <label class="opt opt-app"><input type="radio" name="type" id="t-app"><span class="tx"><b>Apps</b><span>One tool with an AI agent behind it: the smaller, cheaper start</span></span><small>Next</small></label>
+                <div class="subs">
+                  <label class="sub-opt"><input type="radio" name="apps" id="p-quote" checked>Quote builder</label>
+                  <label class="sub-opt"><input type="radio" name="apps" id="p-intake">Intake form</label>
+                  <label class="sub-opt"><input type="radio" name="apps" id="p-photo">Job-photo report</label>
+                </div>
+              </div>
             </div>
           </fieldset>
           <fieldset>
@@ -192,6 +190,7 @@
         <figure class="ticket" aria-label="Example work order for a roofing company">
           <figcaption><span><b>Bayview Roofing</b> · a day with your agent</span><span class="tag">Example</span></figcaption>
           <ol class="t t-desk">
+            <li class="sh">Website, text and email</li>
             <li class="x x-win"><time>7:10 am</time><span>You miss a call on the way to a job. They get a text right away.<em>Win more jobs</em></span></li>
             <li><time>9:42 pm</time><span>Someone asks on your website: "Do you fix leaks around chimneys?"</span></li>
             <li><time>9:42 pm</time><span>It answers from your facts: yes, and Hancock is in your area.</span></li>
@@ -206,6 +205,7 @@
             <li class="x x-run na"><time>Note</time><span>Running the job is the job-site manager's work.<em>Run the job</em></span></li>
           </ol>
           <ol class="t t-phone">
+            <li class="sh">Phone calls</li>
             <li><time>10:15 am</time><span>Your phone rings while you're up on a roof. It picks up.</span></li>
             <li><time>10:15 am</time><span>It says it's your AI assistant and asks what they need.</span></li>
             <li class="x x-es"><time>10:15 am</time><span>"Para español, oprima 2." Spanish callers get the whole call in Spanish.<em>Español</em></span></li>
@@ -219,6 +219,7 @@
             <li class="x x-run na"><time>Note</time><span>Running the job is the job-site manager's work.<em>Run the job</em></span></li>
           </ol>
           <ol class="t t-site">
+            <li class="sh">Jobs and crew</li>
             <li class="x x-run"><time>6:00 am</time><span>Rain is coming Thursday. It drafts a text moving the Oak Ave job to Friday, for you to OK.<em>Run the job</em></span></li>
             <li><time>6:45 am</time><span>You and your crew get today's jobs and addresses.</span></li>
             <li class="x x-app"><time>6:45 am</time><span>Your crew opens the app: today's jobs, a camera button and "done".<em>Phone app</em></span></li>
@@ -233,6 +234,7 @@
             <li class="x x-win na"><time>Note</time><span>Winning new jobs is the front desk's and the receptionist's work.<em>Win more jobs</em></span></li>
           </ol>
           <ol class="t t-office">
+            <li class="sh">Money and approvals</li>
             <li><time>6:30 am</time><span>Your morning brief: today's jobs, new leads and what's waiting on you.</span></li>
             <li><time>8:10 am</time><span>A voice note from the truck: "Call Dave back about the chimney." It's on today's list.</span></li>
             <li class="x x-paid"><time>9:00 am</time><span>The Maple St invoice, with a pay link, is ready for you to OK.<em>Get paid faster</em></span></li>
@@ -243,6 +245,41 @@
             <li class="x x-paid"><time>4:40 pm</time><span>Dave paid by card. The invoice is marked paid.<em>Get paid faster</em></span></li>
             <li class="x x-es"><time>Any time</time><span>Talk to it in English or Spanish.<em>Español</em></span></li>
             <li class="x x-run na"><time>Note</time><span>The job-site manager's daily update lands in your brief.<em>Run the job</em></span></li>
+          </ol>
+          <ol class="t t-quote">
+            <li><time>7:20 pm</time><span>A homeowner opens your quote page and enters the job: a roof replacement, its measurements and a few photos.</span></li>
+            <li class="x x-es"><time>7:20 pm</time><span>The page works in Spanish too.<em>Español</em></span></li>
+            <li><time>7:22 pm</time><span>It drafts an estimate from your price list. It never guesses sizes from the photos.</span></li>
+            <li><time>7:30 pm</time><span>You get the draft to check. You change one line and OK it.</span></li>
+            <li class="x x-app"><time>7:30 pm</time><span>You OK it from the phone app in one tap.<em>Phone app</em></span></li>
+            <li><time>7:31 pm</time><span>The homeowner gets your estimate by email.</span></li>
+            <li class="x x-win"><time>3 days later</time><span>No answer yet. It sends a friendly check-in.<em>Win more jobs</em></span></li>
+            <li class="x x-paid"><time>5 days later</time><span>They accept. A deposit pay link goes out with your OK.<em>Get paid faster</em></span></li>
+            <li class="x x-rep na"><time>Note</time><span>Review requests come with a customer agent or the Office.<em>Reputation</em></span></li>
+            <li class="x x-run na"><time>Note</time><span>Running the job is the job-site manager's work.<em>Run the job</em></span></li>
+          </ol>
+          <ol class="t t-intake">
+            <li><time>8:05 pm</time><span>A homeowner fills in your job form: what they need, the address and photos of the damage.</span></li>
+            <li class="x x-es"><time>8:05 pm</time><span>The form works in Spanish too.<em>Español</em></span></li>
+            <li><time>8:05 pm</time><span>It asks the follow-up questions you would: how old is the roof, any leaks inside?</span></li>
+            <li><time>8:06 pm</time><span>You get one clean summary by text and email, ready for a callback.</span></li>
+            <li class="x x-app"><time>8:06 pm</time><span>It shows up in your phone app, photos and all.<em>Phone app</em></span></li>
+            <li class="x x-win"><time>8:06 pm</time><span>It offers a time for you to come look, for you to confirm.<em>Win more jobs</em></span></li>
+            <li class="x x-paid na"><time>Note</time><span>Invoices and payments are in the Office.<em>Get paid faster</em></span></li>
+            <li class="x x-rep na"><time>Note</time><span>Review requests come with a customer agent or the Office.<em>Reputation</em></span></li>
+            <li class="x x-run na"><time>Note</time><span>Running the job is the job-site manager's work.<em>Run the job</em></span></li>
+          </ol>
+          <ol class="t t-photo">
+            <li><time>12:30 pm</time><span>Your crew snaps photos of the tear-off and the new decking.</span></li>
+            <li class="x x-app"><time>12:30 pm</time><span>They take them in the phone app, filed on the job.<em>Phone app</em></span></li>
+            <li><time>4:00 pm</time><span>They tap done. It puts the photos in order with short notes.</span></li>
+            <li class="x x-es"><time>4:00 pm</time><span>Notes the crew writes in Spanish come out in English in the report.<em>Español</em></span></li>
+            <li><time>4:10 pm</time><span>You check the report and OK it.</span></li>
+            <li><time>4:15 pm</time><span>The homeowner gets a tidy before-and-after report.</span></li>
+            <li class="x x-rep"><time>4:15 pm</time><span>The report ends with a link to leave you a review.<em>Reputation</em></span></li>
+            <li class="x x-win na"><time>Note</time><span>Winning new jobs is the customer agents' work.<em>Win more jobs</em></span></li>
+            <li class="x x-paid na"><time>Note</time><span>Invoices and payments are in the Office.<em>Get paid faster</em></span></li>
+            <li class="x x-run na"><time>Note</time><span>Updates during the job come with the job-site manager.<em>Run the job</em></span></li>
           </ol>
           <p class="hint">Tick a pack to see what it adds.</p>
           <p class="ticket-foot">An example. Each agent opens as a pilot first, with a fixed price in writing.</p>
