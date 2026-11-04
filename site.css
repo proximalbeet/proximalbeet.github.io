@@ -142,11 +142,11 @@ footer a { color: var(--ink-2); }
 /* the agents as a swipeable slideshow: scroll-snap does the swiping, the slide in view grows a little */
 .carousel { position: relative; margin: 0 -1rem; }
 .slides { display: grid; grid-auto-flow: column; grid-auto-columns: min(88%, 52rem); gap: 1rem; padding: 0.5rem 1rem 1rem;
-  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 1rem; overscroll-behavior-x: contain; scrollbar-width: none;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 1rem; overscroll-behavior-x: contain; scrollbar-width: none;
   position: relative; scroll-behavior: smooth; align-items: start; }
 .slides::-webkit-scrollbar { display: none; }
 .slides:focus-visible { outline: 3px solid var(--hivis); outline-offset: -3px; border-radius: 1rem; }
-.slide { scroll-snap-align: center; display: grid; gap: 1.25rem; grid-template-columns: 1fr; align-content: start;
+.slide { scroll-snap-align: start; scroll-snap-stop: always; display: grid; gap: 1.25rem; grid-template-columns: 1fr; align-content: start;
   background: var(--bg); border: 1px solid var(--line); border-radius: 1rem; padding: 1.4rem 1.4rem 1.5rem; }
 .slide.main { border: 2px solid var(--ink); }
 @media (min-width: 48rem) { .slide.main { grid-template-columns: 1.6fr 1fr; padding: 1.75rem 2rem; } }
@@ -159,12 +159,20 @@ footer a { color: var(--ink-2); }
 .chan small, .items small { font-size: 0.64rem; font-weight: 750; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-2);
   border: 1px solid var(--line); border-radius: 999px; padding: 0.05rem 0.45rem; vertical-align: 2px; }
 .chan small.open { border-color: var(--hivis); background: var(--tint); color: var(--ink); }
+.chan-note { margin: -0.4rem 0 1rem; color: var(--ink-2); font-size: 0.88rem; }
 .slide-eg { margin: 0; padding: 0.7rem 0.9rem; border-radius: 0.6rem; background: var(--tint); font-size: 0.95rem; }
 .items { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 0.6rem; }
 .items li { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--hivis); border-radius: 0.7rem; padding: 0.7rem 0.95rem; }
 .items b { display: block; margin-bottom: 0.15rem; }
 .items small { margin-left: 0.35rem; }
 .items span { color: var(--ink-2); font-size: 0.95rem; }
+.js .slides { overflow-y: hidden; transition: height 0.3s ease; }
+@media (max-width: 47.99rem) {
+  .slides { grid-auto-columns: calc(100% - 2.75rem); gap: 0.75rem; }
+  .slide { padding: 1.15rem 1.1rem 1.25rem; }
+  .slide h3 { font-size: 1.35rem; }
+  .incl { display: none; }
+}
 .sl-ctrl { display: none; align-items: center; justify-content: center; gap: 0.9rem; margin-top: 0.25rem; }
 .js .sl-ctrl { display: flex; }
 .sl-prev, .sl-next { width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 2px solid var(--ink); background: var(--surface); color: var(--ink);
@@ -183,7 +191,7 @@ footer a { color: var(--ink-2); }
   35%, 65% { transform: scale(1); opacity: 1; }
   100% { transform: scale(0.94); opacity: 0.55; }
 }
-@media (prefers-reduced-motion: reduce) { .slide { animation: none; } .slides { scroll-behavior: auto; } .dots button { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .slide { animation: none; } .slides { scroll-behavior: auto; transition: none; } .dots button { transition: none; } }
 
 /* build your agent: radios and checkboxes (no script) drive an example work order */
 .builder { border-bottom: 1px solid var(--line); }
@@ -241,7 +249,9 @@ footer a { color: var(--ink-2); }
 .quiz-head p { margin: 0; color: var(--night-ink-2); font-size: 0.88rem; }
 .quiz-close { margin-left: auto; background: none; border: 1px solid var(--night-line); color: var(--night-ink); border-radius: 0.5rem;
   padding: 0.35rem 0.75rem; font: inherit; cursor: pointer; }
-.quiz-pop .qz { padding: 1.2rem; }
+.quiz-pop .qz { padding: 1.2rem 1.2rem 0; }
+.quiz-pop:has(.stepper) { min-height: min(44rem, calc(100dvh - 1.5rem)); }
+@media (max-width: 40rem) { .quiz-pop:has(.stepper) { height: calc(100dvh - 1.5rem); } }
 
 /* the work order */
 .ticket { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 0.9rem; overflow: hidden;
@@ -317,7 +327,7 @@ footer a { color: var(--ink-2); }
 .qbtns .btn.primary { background: var(--hivis); }
 .qbtns .btn.primary { color: var(--hivis-ink); }
 .reset { background: none; border: 0; color: var(--night-ink-2); text-decoration: underline; font: inherit; cursor: pointer; padding: 0.5rem; }
-.qres .r, .qres .rec, .qres .grp, .q-next { display: none; }
+.qres .r, .qres .rec, .qres .grp { display: none; }
 @supports selector(:has(*)) {
   .qz .qs:not(.qs1), .qz .qres { display: none; }
   .qz:has([name="q1"]:checked) .qs2,
@@ -353,3 +363,22 @@ footer a { color: var(--ink-2); }
   .qz:has(#s-5:checked, #s-15:checked, #s-16:checked):not(:has(#z-small:checked)) .k-app { display: list-item; }
 }
 @supports not selector(:has(*)) { .qres .r-fallback { display: block; } }
+
+/* the quiz one question at a time (the stepper script); without it every question shows in a list */
+.qprog { display: none; height: 6px; margin: 0 0 1rem; border-radius: 999px; background: var(--line); overflow: hidden; }
+.qprog span { display: block; height: 100%; width: 0; background: var(--hivis); transition: width 0.3s ease; }
+.qnav { display: none; gap: 0.75rem; margin-top: 1rem; position: sticky; bottom: 0; z-index: 1; padding: 0.75rem 0 0.9rem;
+  background: var(--bg); border-top: 1px solid var(--line); }
+.stepper .qprog { display: block; }
+.stepper .qnav { display: flex; }
+.qz.stepper .qs, .qz.stepper .qres { display: none !important; }
+.qz.stepper .qs.on, .qz.stepper .qres.on { display: block !important; animation: step-in 0.25s ease-out; }
+.qz.stepper .qs { margin-bottom: 0; }
+.q-back, .q-next { font: inherit; font-weight: 750; padding: 0.7rem 1.3rem; border-radius: 0.55rem; cursor: pointer; }
+.q-back { background: var(--surface); color: var(--ink); border: 2px solid var(--line); }
+.q-back:hover { border-color: var(--ink); }
+.q-next { margin-left: auto; min-width: 7rem; background: var(--hivis); color: var(--hivis-ink); border: 2px solid var(--hivis); }
+.q-next:disabled { opacity: 0.45; cursor: not-allowed; }
+.q-back:focus-visible, .q-next:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+@keyframes step-in { from { opacity: 0; transform: translateX(14px); } }
+@media (prefers-reduced-motion: reduce) { .qz.stepper .qs.on, .qz.stepper .qres.on { animation: none; } .qprog span { transition: none; } }
