@@ -45,6 +45,8 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--hivis); outline-o
 .btn.primary:hover { filter: brightness(1.06); }
 .btn.ghost { color: var(--night-ink); background: transparent; }
 .where { margin: 1.25rem 0 0; font-size: 0.92rem; color: var(--night-ink-2); }
+.call { margin: 1.1rem 0 0; font-weight: 650; color: var(--night-ink); }
+.call a { color: var(--hivis); white-space: nowrap; }
 
 /* the example conversation */
 .chat { margin: 0; background: var(--night-2); border: 1px solid var(--night-line); border-radius: 1rem; overflow: hidden;
@@ -116,6 +118,7 @@ section > .wrap > p.sub { color: var(--ink-2); margin: 0 0 1.75rem; max-width: 6
 .contact-box p { margin: 0 0 0.6rem; color: var(--night-ink-2); }
 .contact-box a { color: var(--hivis); }
 .big { font-size: 1.25rem; font-weight: 750; word-break: break-word; }
+.contact-box .small { font-size: 0.9rem; margin-top: 0.4rem; }
 
 /* privacy page */
 .doc { max-width: 46rem; padding: 2.5rem 0 3rem; }
