@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://onetouchagents.com/">
 <meta property="og:type" content="website">
 <meta name="color-scheme" content="light dark">
-<link rel="stylesheet" href="/site.css?v=12">
+<link rel="stylesheet" href="/site.css?v=13">
 </head>
 <body>
 <header class="top">
@@ -73,7 +73,7 @@
             <div class="slide-body">
               <span class="badge ready">Opening soon · pilot list open</span>
               <h3>Customer agents</h3>
-              <p class="slide-lead">Every customer gets an answer in seconds, day or night, from the facts you give it. On your website, by text, by email and on the phone, so a lead never waits until you're off the roof.</p>
+              <p class="slide-lead">Every customer gets an answer in seconds, day or night, from the facts you give it.<span class="more"> On your website, by text, by email and on the phone, so a lead never waits until you're off the roof.</span></p>
               <ul class="ticks">
                 <li>Answers questions about your services, prices, service area and hours.</li>
                 <li>Takes down the name, number, address and job, and sends it to you by email. Texts follow once your business number is registered.</li>
@@ -135,12 +135,12 @@
               <h3>Packs</h3>
               <p class="slide-lead">Add what fits once your agent is working. Each pack's pieces open one at a time.</p>
               <ul class="items">
-                <li><b>Win more jobs <small>Next</small></b><span>Missed-call text-back, booking from your calendar, quote follow-ups and lead sites.</span></li>
-                <li><b>Reviews and marketing <small>Next</small></b><span>Review requests after each job, and replies drafted from reviews you forward, come first. Posts for Facebook, Instagram and Google from your work come later, and nothing posts until you OK it.</span></li>
-                <li><b>Get paid faster <small>Later</small></b><span>Invoices with a pay link, friendly payment reminders, receipts to QuickBooks.</span></li>
-                <li><b>Run the job <small>Later</small></b><span>Updates for the homeowner, weather watch and material lists.</span></li>
-                <li><b>En español <small>Next</small></b><span>Every agent works in English and Spanish.</span></li>
+                <li><b>Win more jobs <small>Next</small></b><span>Missed-call text-back, booking, quote follow-ups and lead sites.</span></li>
+                <li><b>Reviews and marketing <small>Next</small></b><span>Review requests and replies first; posts later, only with your OK.</span></li>
+                <li><b>Get paid faster <small>Later</small></b><span>Invoices with a pay link, reminders and receipts to QuickBooks.</span></li>
+                <li><b>Run the job <small>Later</small></b><span>Homeowner updates, weather watch and material lists.</span></li>
               </ul>
+              <p class="slide-foot">Extras: <b>En español</b> <small>Next</small> and a <b>phone app</b> <small>Later</small>.</p>
               <p class="slide-eg"><b>Example:</b> You miss a call at 7:10 am on the way to a job. The caller has a text from you before you set the ladder down.</p>
             </div>
           </article>
@@ -530,7 +530,7 @@ document.getElementById('ask').addEventListener('click', function () {
 });
 </script>
 <script>
-// The agents slideshow: arrows, dots, and the height of the slide in view (swiping works without this).
+// The agents slideshow: arrows and dots (swiping works without this).
 (function () {
   var t = document.querySelector('.slides'); if (!t) return;
   var s = [].slice.call(t.children), dots = [].slice.call(document.querySelectorAll('.dots button'));
@@ -542,14 +542,9 @@ document.getElementById('ask').addEventListener('click', function () {
     s.forEach(function (el, i) { var m = Math.abs(el.offsetLeft - x); if (m < d) { d = m; best = i; } });
     return best;
   }
-  function fit(i) {
-    var cs = getComputedStyle(t);
-    t.style.height = (s[i].offsetHeight + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom)) + 'px';
-  }
   function mark() {
     var c = cur();
     dots.forEach(function (d, i) { d.setAttribute('aria-current', i === c ? 'true' : 'false'); });
-    fit(c);
   }
   function go(i) { i = Math.max(0, Math.min(s.length - 1, i)); t.scrollTo({ left: s[i].offsetLeft - pad() }); }
   document.querySelector('.sl-prev').addEventListener('click', function () { go(cur() - 1); });

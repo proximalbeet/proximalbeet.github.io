@@ -160,18 +160,33 @@ footer a { color: var(--ink-2); }
   border: 1px solid var(--line); border-radius: 999px; padding: 0.05rem 0.45rem; vertical-align: 2px; }
 .chan small.open { border-color: var(--hivis); background: var(--tint); color: var(--ink); }
 .chan-note { margin: -0.4rem 0 1rem; color: var(--ink-2); font-size: 0.88rem; }
+.slide-foot { margin: 0 0 1rem; color: var(--ink-2); font-size: 0.92rem; }
+.slide-foot b { color: var(--ink); }
+.slide-foot small { font-size: 0.62rem; font-weight: 750; text-transform: uppercase; letter-spacing: 0.07em; border: 1px solid var(--line);
+  border-radius: 999px; padding: 0.05rem 0.4rem; vertical-align: 2px; }
 .slide-eg { margin: 0; padding: 0.7rem 0.9rem; border-radius: 0.6rem; background: var(--tint); font-size: 0.95rem; }
 .items { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 0.6rem; }
 .items li { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--hivis); border-radius: 0.7rem; padding: 0.7rem 0.95rem; }
 .items b { display: block; margin-bottom: 0.15rem; }
 .items small { margin-left: 0.35rem; }
 .items span { color: var(--ink-2); font-size: 0.95rem; }
-.js .slides { overflow-y: hidden; transition: height 0.3s ease; }
 @media (max-width: 47.99rem) {
-  .slides { grid-auto-columns: calc(100% - 2.75rem); gap: 0.75rem; }
-  .slide { padding: 1.15rem 1.1rem 1.25rem; }
-  .slide h3 { font-size: 1.35rem; }
-  .incl { display: none; }
+  /* phones: short slides of one height, so swiping never moves the page */
+  .slides { grid-auto-columns: calc(100% - 2.75rem); gap: 0.75rem; align-items: stretch; }
+  .slide { padding: 1.1rem 1.05rem 1.2rem; gap: 0.9rem; }
+  .slide h3 { font-size: 1.3rem; margin-top: 0.6rem; }
+  .slide-lead { font-size: 0.95rem; margin-bottom: 0.75rem; }
+  .slide-lead .more, .slide-eg, .chan-note, .incl, .slide.main .price-box p { display: none; }
+  .slide.main .ticks { margin-bottom: 0.75rem; gap: 0.35rem; font-size: 0.95rem; }
+  .slide.main .ticks li:nth-child(n+4) { display: none; }
+  .chan { margin-bottom: 0; }
+  .slide.main .price-box { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.8rem 0.9rem; }
+  .slide.main .price { font-size: 1.15rem; white-space: nowrap; }
+  .slide.main .price-box .btn { padding: 0.6rem 0.9rem; font-size: 0.95rem; white-space: nowrap; }
+  .items { gap: 0.45rem; margin-bottom: 0; }
+  .items li { padding: 0.55rem 0.8rem; }
+  .items span { font-size: 0.86rem; line-height: 1.35; }
+  .slide-foot { margin: 0.6rem 0 0; font-size: 0.88rem; }
 }
 .sl-ctrl { display: none; align-items: center; justify-content: center; gap: 0.9rem; margin-top: 0.25rem; }
 .js .sl-ctrl { display: flex; }
@@ -184,14 +199,14 @@ footer a { color: var(--ink-2); }
 .dots button[aria-current="true"] { width: 1.8rem; background: var(--hivis); }
 .sl-prev:focus-visible, .sl-next:focus-visible, .dots button:focus-visible { outline: 3px solid var(--hivis); outline-offset: 2px; }
 @supports (animation-timeline: view()) {
-  .slide { animation: slide-focus linear both; animation-timeline: view(inline); }
+  @media (min-width: 48rem) { .slide { animation: slide-focus linear both; animation-timeline: view(inline); } }
 }
 @keyframes slide-focus {
   0% { transform: scale(0.94); opacity: 0.55; }
   35%, 65% { transform: scale(1); opacity: 1; }
   100% { transform: scale(0.94); opacity: 0.55; }
 }
-@media (prefers-reduced-motion: reduce) { .slide { animation: none; } .slides { scroll-behavior: auto; transition: none; } .dots button { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .slide { animation: none; } .slides { scroll-behavior: auto; } .dots button { transition: none; } }
 
 /* build your agent: radios and checkboxes (no script) drive an example work order */
 .builder { border-bottom: 1px solid var(--line); }
