@@ -69,7 +69,7 @@
 
       <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Kinds of agents">
         <div class="slides" tabindex="0">
-          <article class="slide main" role="group" aria-roledescription="slide" aria-label="1 of 5: Customer agents">
+          <article class="slide main" role="group" aria-roledescription="slide" aria-label="1 of 6: Customer agents">
             <div class="slide-body">
               <span class="badge ready">Opening soon · pilot list open</span>
               <h3>Customer agents</h3>
@@ -101,7 +101,7 @@
             </div>
           </article>
 
-          <article class="slide" role="group" aria-roledescription="slide" aria-label="2 of 5: Team agents">
+          <article class="slide" role="group" aria-roledescription="slide" aria-label="2 of 6: Team agents">
             <div class="slide-body">
               <span class="badge">Later</span>
               <h3>Team agents</h3>
@@ -114,7 +114,21 @@
             </div>
           </article>
 
-          <article class="slide" role="group" aria-roledescription="slide" aria-label="3 of 5: Websites and phone apps">
+          <article class="slide" role="group" aria-roledescription="slide" aria-label="3 of 6: Apps">
+            <div class="slide-body">
+              <span class="badge">Next</span>
+              <h3>Apps</h3>
+              <p class="slide-lead">One page or form with an AI agent doing the work behind it: the smaller, cheaper start.</p>
+              <ul class="items">
+                <li><b>Quote builder</b><span>Customers enter their job, and you get a draft estimate to OK.</span></li>
+                <li><b>Intake form</b><span>Every request comes in with the details and photos you need.</span></li>
+                <li><b>Job-photo report</b><span>Your crew's photos become a tidy before-and-after report for the homeowner.</span></li>
+              </ul>
+              <p class="slide-eg"><b>Example:</b> A homeowner enters their roof job at 7:20 pm. You OK the draft estimate at 7:30, and it goes out by email.</p>
+            </div>
+          </article>
+
+          <article class="slide" role="group" aria-roledescription="slide" aria-label="4 of 6: Websites and phone apps">
             <div class="slide-body">
               <span class="badge">Next</span>
               <h3>Websites and phone apps</h3>
@@ -122,13 +136,12 @@
               <ul class="items">
                 <li><b>Website</b><span>A fast site that shows your work and sends you the job details instead of a voicemail. On a phone it works like an app.</span></li>
                 <li><b>Phone app</b><span>An Android app for you and your crew: today's jobs, a camera button and your approvals. iPhone later.</span></li>
-                <li><b>Tools inside <small>Later</small></b><span>A quote builder that drafts estimates for you to OK, and job-photo reports for the homeowner.</span></li>
               </ul>
               <p class="slide-eg"><b>Example:</b> A homeowner opens your site on their phone at 7:20 pm and taps "Get a quote". The job details are in your email before they put the phone down.</p>
             </div>
           </article>
 
-          <article class="slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Packs">
+          <article class="slide" role="group" aria-roledescription="slide" aria-label="5 of 6: Packs">
             <div class="slide-body">
               <span class="badge">Add-ons</span>
               <h3>Packs</h3>
@@ -144,7 +157,7 @@
             </div>
           </article>
 
-          <article class="slide" role="group" aria-roledescription="slide" aria-label="5 of 5: Connections">
+          <article class="slide" role="group" aria-roledescription="slide" aria-label="6 of 6: Connections">
             <div class="slide-body">
               <span class="badge">Later</span>
               <h3>Connections</h3>
@@ -162,6 +175,7 @@
           <div class="dots">
             <button type="button" aria-label="Customer agents" aria-current="true"></button>
             <button type="button" aria-label="Team agents"></button>
+            <button type="button" aria-label="Apps"></button>
             <button type="button" aria-label="Websites and phone apps"></button>
             <button type="button" aria-label="Packs"></button>
             <button type="button" aria-label="Connections"></button>
@@ -197,6 +211,14 @@
                   <label class="sub-opt"><input type="radio" name="team" id="m-site" checked>Jobs and crew</label>
                   <label class="sub-opt"><input type="radio" name="team" id="m-office">Money and approvals, for you only</label>
                   <label class="sub-opt"><input type="radio" name="team" id="m-both">Both</label>
+                </div>
+              </div>
+              <div class="type">
+                <label class="opt opt-app"><input type="checkbox" class="ty" id="t-app"><span class="tx"><b>Apps</b><span>One tool with an AI agent behind it: the smaller, cheaper start</span></span><small>Next</small></label>
+                <div class="subs">
+                  <label class="sub-opt"><input type="radio" name="apps" id="p-quote" checked>Quote builder</label>
+                  <label class="sub-opt"><input type="radio" name="apps" id="p-intake">Intake form</label>
+                  <label class="sub-opt"><input type="radio" name="apps" id="p-photo">Job-photo report</label>
                 </div>
               </div>
               <div class="type">
@@ -283,6 +305,45 @@
             <li class="x x-paid"><time>4:40 pm</time><span>Dave paid by card. The invoice is marked paid.<em>Get paid faster</em></span></li>
             <li class="x x-es"><time>Any time</time><span>Talk to it in English or Spanish.<em>Español</em></span></li>
             <li class="x x-run na"><time>Note</time><span>The job-site manager's daily update lands in your brief.<em>Run the job</em></span></li>
+          </ol>
+          <ol class="t t-quote">
+            <li class="sh">Quote builder</li>
+            <li><time>7:20 pm</time><span>A homeowner opens your quote page and enters the job: a roof replacement, its measurements and a few photos.</span></li>
+            <li class="x x-es"><time>7:20 pm</time><span>The page works in Spanish too.<em>Español</em></span></li>
+            <li><time>7:22 pm</time><span>It drafts an estimate from your price list. It never guesses sizes from the photos.</span></li>
+            <li><time>7:30 pm</time><span>You get the draft to check. You change one line and OK it.</span></li>
+            <li class="x x-app"><time>7:30 pm</time><span>You OK it from the phone app in one tap.<em>Phone app</em></span></li>
+            <li><time>7:31 pm</time><span>The homeowner gets your estimate by email.</span></li>
+            <li class="x x-win"><time>3 days later</time><span>No answer yet. It sends a friendly check-in.<em>Win more jobs</em></span></li>
+            <li class="x x-paid"><time>5 days later</time><span>They accept. A deposit pay link goes out with your OK.<em>Get paid faster</em></span></li>
+            <li class="x x-rep na"><time>Note</time><span>Reviews and posts come with a customer agent or the Office.<em>Reviews</em></span></li>
+            <li class="x x-run na"><time>Note</time><span>Running the job is the job-site manager's work.<em>Run the job</em></span></li>
+          </ol>
+          <ol class="t t-intake">
+            <li class="sh">Intake form</li>
+            <li><time>8:05 pm</time><span>A homeowner fills in your job form: what they need, the address and photos of the damage.</span></li>
+            <li class="x x-es"><time>8:05 pm</time><span>The form works in Spanish too.<em>Español</em></span></li>
+            <li><time>8:05 pm</time><span>It asks the follow-up questions you would: how old is the roof, any leaks inside?</span></li>
+            <li><time>8:06 pm</time><span>You get one clean summary by email, ready for a callback.</span></li>
+            <li class="x x-app"><time>8:06 pm</time><span>It shows up in your phone app, photos and all.<em>Phone app</em></span></li>
+            <li class="x x-win"><time>8:06 pm</time><span>It offers a time for you to come look, for you to confirm.<em>Win more jobs</em></span></li>
+            <li class="x x-paid na"><time>Note</time><span>Invoices and payments are in the Office.<em>Get paid faster</em></span></li>
+            <li class="x x-rep na"><time>Note</time><span>Reviews and posts come with a customer agent or the Office.<em>Reviews</em></span></li>
+            <li class="x x-run na"><time>Note</time><span>Running the job is the job-site manager's work.<em>Run the job</em></span></li>
+          </ol>
+          <ol class="t t-photo">
+            <li class="sh">Job-photo report</li>
+            <li><time>12:30 pm</time><span>Your crew snaps photos of the tear-off and the new decking.</span></li>
+            <li class="x x-app"><time>12:30 pm</time><span>They take them in the phone app, filed on the job.<em>Phone app</em></span></li>
+            <li><time>4:00 pm</time><span>They tap done. It puts the photos in order with short notes.</span></li>
+            <li class="x x-es"><time>4:00 pm</time><span>Notes the crew writes in Spanish come out in English in the report.<em>Español</em></span></li>
+            <li><time>4:10 pm</time><span>You check the report and OK it.</span></li>
+            <li><time>4:15 pm</time><span>The homeowner gets a tidy before-and-after report.</span></li>
+            <li class="x x-rep"><time>4:15 pm</time><span>The report ends with a link to leave you a review.<em>Reviews</em></span></li>
+            <li class="x x-rep"><time>4:15 pm</time><span>The best before-and-after photos become a post for you to OK.<em>Marketing</em></span></li>
+            <li class="x x-win na"><time>Note</time><span>Winning new jobs is the customer agents' work.<em>Win more jobs</em></span></li>
+            <li class="x x-paid na"><time>Note</time><span>Invoices and payments are in the Office.<em>Get paid faster</em></span></li>
+            <li class="x x-run na"><time>Note</time><span>Updates during the job come with the job-site manager.<em>Run the job</em></span></li>
           </ol>
           <ol class="t t-web">
             <li class="sh">Website</li>
@@ -416,7 +477,7 @@
       <fieldset class="qs qs6">
         <legend><span class="step">6</span><span class="qtext">How would you like to start?</span> <small>6 of 6</small></legend>
         <div class="opts">
-          <label class="opt"><input type="radio" name="q6" id="z-web"><span class="tx"><b>A website or phone app first</b><span>Your own site that works like an app on phones, or an app for your crew</span></span></label>
+          <label class="opt"><input type="radio" name="q6" id="z-small"><span class="tx"><b>Try one small tool first</b><span>One app on a smaller monthly plan</span></span></label>
           <label class="opt"><input type="radio" name="q6" id="z-one"><span class="tx"><b>One agent that takes a job off my plate</b><span>Add more once it's working</span></span></label>
           <label class="opt"><input type="radio" name="q6" id="z-full"><span class="tx"><b>Hand off most of the calls, office work and follow-ups</b><span>Agents and packs together</span></span></label>
         </div>
@@ -424,20 +485,21 @@
 
       <div class="qres" aria-live="polite">
         <p class="eyebrow">Your start</p>
-        <h2 class="r r-web">Start with your website or app</h2>
+        <h2 class="r r-small">Start small with one app</h2>
         <h2 class="r r-one">Start with one agent</h2>
         <h2 class="r r-full">Your setup</h2>
-        <p class="r r-web">Your own site or app first. Add an agent when you're ready.</p>
+        <p class="r r-small">One tool, a smaller monthly plan. Add an agent when you're ready.</p>
         <p class="r r-one">Start with the first one below, and add the rest once it's working.</p>
         <p class="r r-full">Agents and packs that fit how you work. It goes live one piece at a time.</p>
         <p class="r r-fallback">Email your answers and I'll suggest the right start.</p>
 
-        <div class="grp g-web">
-          <h3>Websites and apps that fit</h3>
+        <div class="grp g-apps">
+          <h3>Apps that fit</h3>
           <ul class="recs">
-            <li class="rec k-web"><b>Website</b>: a fast site that shows your work and sends you the job details. On a phone it works like an app.</li>
-            <li class="rec k-mobile"><b>Phone app</b>: an Android app for you and your crew, with today's jobs, photos and your approvals. iPhone later.</li>
-            <li class="rec k-tools"><b>Coming later inside your site or app</b>: a quote builder that drafts estimates for you to OK, and job-photo reports for the homeowner.</li>
+            <li class="rec k-quote"><b>Quote builder</b>: customers enter their job, and you get a draft estimate to OK.</li>
+            <li class="rec k-intake"><b>Intake form</b>: every request comes in with the details and photos you need.</li>
+            <li class="rec k-photo"><b>Job-photo report</b>: your crew's photos become a tidy report for the homeowner.</li>
+            <li class="rec k-textback"><b>Missed-call text-back on its own</b>: the smallest start. Every caller you miss gets a text right away, and you get their number.</li>
           </ul>
         </div>
         <div class="grp g-agents">

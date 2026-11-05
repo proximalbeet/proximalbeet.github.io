@@ -229,7 +229,7 @@ footer a { color: var(--ink-2); }
 .opt small, .tog small { margin-left: auto; flex: none; font-size: 0.66rem; font-weight: 750; text-transform: uppercase; letter-spacing: 0.07em;
   color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 0.05rem 0.45rem; }
 .opt small.open { border-color: var(--hivis); background: var(--tint); color: var(--ink); }
-.opt-web { border-style: dashed; }
+.opt-app, .opt-web { border-style: dashed; }
 /* the types are checkboxes: pick one or more */
 .type .opt::before { border-radius: 0.3rem; }
 .type .opt:has(input:checked)::before { box-shadow: none; background: var(--hivis) no-repeat center / 0.8rem
@@ -305,15 +305,19 @@ footer a { color: var(--ink-2); }
   .bld:has(#t-cust:checked):has(#c-phone:checked, #c-both:checked) .t-phone,
   .bld:has(#t-team:checked):has(#m-site:checked, #m-both:checked) .t-site,
   .bld:has(#t-team:checked):has(#m-office:checked, #m-both:checked) .t-office,
+  .bld:has(#t-app:checked):has(#p-quote:checked) .t-quote,
+  .bld:has(#t-app:checked):has(#p-intake:checked) .t-intake,
+  .bld:has(#t-app:checked):has(#p-photo:checked) .t-photo,
   .bld:has(#t-web:checked) .t-web { display: block; }
   .bld:has(#t-cust:checked):has(#c-both:checked) .sh, .bld:has(#t-team:checked):has(#m-both:checked) .sh { display: grid; }
   /* more than one type: each day gets its header, and a note that points at another picked agent goes */
-  .bld:has(#t-cust:checked):has(#t-team:checked) .sh, .bld:has(#t-cust:checked):has(#t-web:checked) .sh,
-  .bld:has(#t-team:checked):has(#t-web:checked) .sh { display: grid; }
-  .bld:has(#t-team:checked):has(#m-office:checked, #m-both:checked) :is(.t-desk, .t-phone, .t-web) .x-paid.na,
-  .bld:has(#t-team:checked):has(#m-site:checked, #m-both:checked) :is(.t-desk, .t-phone, .t-web) .x-run.na,
-  .bld:has(#t-team:checked):has(#m-office:checked, #m-both:checked) .t-web .x-rep.na,
-  .bld:has(#t-cust:checked) .t-web .x-rep.na, .bld:has(#t-cust:checked) .t-site .x-win.na { display: none; }
+  .bld:has(#t-cust:checked):has(#t-team:checked) .sh, .bld:has(#t-cust:checked):has(#t-app:checked) .sh,
+  .bld:has(#t-cust:checked):has(#t-web:checked) .sh, .bld:has(#t-team:checked):has(#t-app:checked) .sh,
+  .bld:has(#t-team:checked):has(#t-web:checked) .sh, .bld:has(#t-app:checked):has(#t-web:checked) .sh { display: grid; }
+  .bld:has(#t-team:checked):has(#m-office:checked, #m-both:checked) :is(.t-desk, .t-phone, .t-web, .t-quote, .t-intake, .t-photo) .x-paid.na,
+  .bld:has(#t-team:checked):has(#m-site:checked, #m-both:checked) :is(.t-desk, .t-phone, .t-web, .t-quote, .t-intake, .t-photo) .x-run.na,
+  .bld:has(#t-team:checked):has(#m-office:checked, #m-both:checked) :is(.t-web, .t-quote, .t-intake) .x-rep.na,
+  .bld:has(#t-cust:checked) :is(.t-web, .t-quote, .t-intake) .x-rep.na, .bld:has(#t-cust:checked) .t-photo .x-win.na, .bld:has(#t-cust:checked) .t-site .x-win.na { display: none; }
   .bld:has(#a-win:checked) .x-win, .bld:has(#a-paid:checked) .x-paid, .bld:has(#a-rep:checked) .x-rep,
   .bld:has(#a-run:checked) .x-run, .bld:has(#a-es:checked) .x-es, .bld:has(#a-app:checked) .x-app {
     display: grid; animation: line-in 0.25s ease-out; }
@@ -364,13 +368,14 @@ footer a { color: var(--ink-2); }
   .qz:has(.qs5 input:checked) .qs6,
   .qz:has([name="q6"]:checked) .qres { display: block; }
   /* the headline */
-  .qz:has(#z-web:checked) .r-web, .qz:has(#z-one:checked) .r-one, .qz:has(#z-full:checked) .r-full { display: block; }
-  /* a website or phone app first */
-  .qz:has(#z-web:checked) .g-web, .qz:has(#z-one:checked) .g-agents, .qz:has(#z-full:checked) .g-agents,
+  .qz:has(#z-small:checked) .r-small, .qz:has(#z-one:checked) .r-one, .qz:has(#z-full:checked) .r-full { display: block; }
+  /* apps, for a small start */
+  .qz:has(#z-small:checked) .g-apps, .qz:has(#z-one:checked) .g-agents, .qz:has(#z-full:checked) .g-agents,
   .qz:has(#z-one:checked) .g-packs, .qz:has(#z-full:checked) .g-packs { display: block; }
-  .qz .k-web,
-  .qz:has(#s-5:checked, #s-15:checked, #s-16:checked, #w-crew:checked) .k-mobile,
-  .qz:has(#w-quote:checked, #w-crew:checked, #r-roof:checked, #r-remod:checked) .k-tools { display: list-item; }
+  .qz:has(#w-quote:checked) .k-quote,
+  .qz:has(#f-web:checked, #f-angi:checked, #w-sched:checked) .k-intake,
+  .qz:has(#w-crew:checked, #w-rev:checked, #f-social:checked, #r-remod:checked, #r-roof:checked) .k-photo,
+  .qz:has(#w-calls:checked, #f-call:checked) .k-textback { display: list-item; }
   /* agents */
   .qz:has(#f-call:checked, #w-calls:checked) .k-phone,
   .qz:has(#f-web:checked, #f-angi:checked, #w-sched:checked, #w-quote:checked, #w-rev:checked, #f-google:checked, #f-social:checked) .k-desk,
@@ -386,7 +391,7 @@ footer a { color: var(--ink-2); }
   .qz:has(#r-lawn:checked) .k-lawn, .qz:has(#r-clean:checked) .k-clean,
   .qz:has(#u-jobber:checked, #u-hcp:checked) .k-crm, .qz:has(#u-qb:checked) .k-qb,
   .qz:has(#u-paper:checked, #u-none:checked) .k-nosoft, .qz:has(#x-es:checked) .k-es,
-  .qz:has(#s-5:checked, #s-15:checked, #s-16:checked):not(:has(#z-web:checked)) .k-app { display: list-item; }
+  .qz:has(#s-5:checked, #s-15:checked, #s-16:checked):not(:has(#z-small:checked)) .k-app { display: list-item; }
 }
 @supports not selector(:has(*)) { .qres .r-fallback { display: block; } }
 
