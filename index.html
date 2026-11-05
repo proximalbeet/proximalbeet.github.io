@@ -176,15 +176,15 @@
   <section class="builder" id="build">
     <div class="wrap">
       <h2>Build your agent</h2>
-      <p class="sub">Pick what you need, then add the packs that fit. The work order shows what it would handle in a day.</p>
+      <p class="sub">Pick one or more, then add the packs that fit. The work order shows what they would handle in a day.</p>
       <div class="bld">
         <div class="bld-controls">
           <button type="button" class="quiz-big" popovertarget="quiz"><span class="qmark" aria-hidden="true">?</span><span>Not sure what you need? Take the quiz<small>Six quick questions about your work, and you get the agents and packs that fit.</small></span></button>
           <fieldset>
-            <legend><span class="step">1</span> Pick a type</legend>
+            <legend><span class="step">1</span> Pick one or more</legend>
             <div class="opts">
               <div class="type">
-                <label class="opt"><input type="radio" name="type" id="t-cust" checked><span class="tx"><b>Customer agents</b><span>Answer your customers on your website, by text, by email and on the phone</span></span><small class="open">Opening soon</small></label>
+                <label class="opt"><input type="checkbox" class="ty" id="t-cust" checked><span class="tx"><b>Customer agents</b><span>Answer your customers on your website, by text, by email and on the phone</span></span><small class="open">Opening soon</small></label>
                 <div class="subs">
                   <label class="sub-opt"><input type="radio" name="cust" id="c-desk" checked>Website, text and email</label>
                   <label class="sub-opt"><input type="radio" name="cust" id="c-phone">Phone calls</label>
@@ -192,7 +192,7 @@
                 </div>
               </div>
               <div class="type">
-                <label class="opt"><input type="radio" name="type" id="t-team"><span class="tx"><b>Team agents</b><span>Work with you and your crew: jobs, photos, money and approvals</span></span><small>Later</small></label>
+                <label class="opt"><input type="checkbox" class="ty" id="t-team"><span class="tx"><b>Team agents</b><span>Work with you and your crew: jobs, photos, money and approvals</span></span><small>Later</small></label>
                 <div class="subs">
                   <label class="sub-opt"><input type="radio" name="team" id="m-site" checked>Jobs and crew</label>
                   <label class="sub-opt"><input type="radio" name="team" id="m-office">Money and approvals, for you only</label>
@@ -200,7 +200,7 @@
                 </div>
               </div>
               <div class="type">
-                <label class="opt opt-web"><input type="radio" name="type" id="t-web"><span class="tx"><b>Website</b><span>Your own site that works like an app on phones, with an agent inside when you want one</span></span><small>Next</small></label>
+                <label class="opt opt-web"><input type="checkbox" class="ty" id="t-web"><span class="tx"><b>Website</b><span>Your own site that works like an app on phones, with an agent inside when you want one</span></span><small>Next</small></label>
               </div>
             </div>
           </fieldset>
@@ -285,6 +285,7 @@
             <li class="x x-run na"><time>Note</time><span>The job-site manager's daily update lands in your brief.<em>Run the job</em></span></li>
           </ol>
           <ol class="t t-web">
+            <li class="sh">Website</li>
             <li><time>7:20 pm</time><span>A homeowner finds you on Google and opens your site on their phone. It's fast and works like an app.</span></li>
             <li><time>7:20 pm</time><span>They see your services, your area and photos of recent jobs.</span></li>
             <li class="x x-es"><time>7:20 pm</time><span>Every page has a Spanish version.<em>Español</em></span></li>
@@ -297,6 +298,7 @@
             <li class="x x-paid na"><time>Note</time><span>Invoices and payments are in the Office.<em>Get paid faster</em></span></li>
             <li class="x x-run na"><time>Note</time><span>Running the job is the job-site manager's work.<em>Run the job</em></span></li>
           </ol>
+          <p class="pick">Pick one or more to see the day.</p>
           <p class="hint">Tick a pack to see what it adds.</p>
           <p class="ticket-foot">An example. Each agent opens as a pilot first, with a fixed price in writing.</p>
         </figure>

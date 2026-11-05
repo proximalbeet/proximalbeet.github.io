@@ -230,6 +230,11 @@ footer a { color: var(--ink-2); }
   color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 0.05rem 0.45rem; }
 .opt small.open { border-color: var(--hivis); background: var(--tint); color: var(--ink); }
 .opt-web { border-style: dashed; }
+/* the types are checkboxes: pick one or more */
+.type .opt::before { border-radius: 0.3rem; }
+.type .opt:has(input:checked)::before { box-shadow: none; background: var(--hivis) no-repeat center / 0.8rem
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.5 3.5L11 1.5' fill='none' stroke='%2315181d' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.pick { display: none; margin: 0; padding: 0.8rem 1.15rem; color: var(--ink-2); font-size: 0.9rem; }
 .fs-note { margin: 0.65rem 0 0; color: var(--ink-2); font-size: 0.88rem; }
 .opt:has(input:checked) { border-color: var(--ink); border-style: solid; box-shadow: inset 5px 0 0 var(--hivis); }
 .opt:has(input:checked)::before { border-color: var(--ink); background: var(--hivis); box-shadow: inset 0 0 0 3px var(--surface); }
@@ -295,17 +300,25 @@ footer a { color: var(--ink-2); }
 .t li.x { display: none; }
 @supports selector(:has(*)) {
   .t-desk, .type .subs { display: none; }
-  .type:has([name="type"]:checked) .subs { display: flex; }
+  .type:has(.ty:checked) .subs { display: flex; }
   .bld:has(#t-cust:checked):has(#c-desk:checked, #c-both:checked) .t-desk,
   .bld:has(#t-cust:checked):has(#c-phone:checked, #c-both:checked) .t-phone,
   .bld:has(#t-team:checked):has(#m-site:checked, #m-both:checked) .t-site,
   .bld:has(#t-team:checked):has(#m-office:checked, #m-both:checked) .t-office,
   .bld:has(#t-web:checked) .t-web { display: block; }
   .bld:has(#t-cust:checked):has(#c-both:checked) .sh, .bld:has(#t-team:checked):has(#m-both:checked) .sh { display: grid; }
+  /* more than one type: each day gets its header, and a note that points at another picked agent goes */
+  .bld:has(#t-cust:checked):has(#t-team:checked) .sh, .bld:has(#t-cust:checked):has(#t-web:checked) .sh,
+  .bld:has(#t-team:checked):has(#t-web:checked) .sh { display: grid; }
+  .bld:has(#t-team:checked):has(#m-office:checked, #m-both:checked) :is(.t-desk, .t-phone, .t-web) .x-paid.na,
+  .bld:has(#t-team:checked):has(#m-site:checked, #m-both:checked) :is(.t-desk, .t-phone, .t-web) .x-run.na,
+  .bld:has(#t-team:checked):has(#m-office:checked, #m-both:checked) .t-web .x-rep.na,
+  .bld:has(#t-cust:checked) .t-web .x-rep.na, .bld:has(#t-cust:checked) .t-site .x-win.na { display: none; }
   .bld:has(#a-win:checked) .x-win, .bld:has(#a-paid:checked) .x-paid, .bld:has(#a-rep:checked) .x-rep,
   .bld:has(#a-run:checked) .x-run, .bld:has(#a-es:checked) .x-es, .bld:has(#a-app:checked) .x-app {
     display: grid; animation: line-in 0.25s ease-out; }
   .bld:has(.togs input:checked) .hint { display: none; }
+  .bld:not(:has(.ty:checked)) .pick { display: block; }
 }
 @keyframes line-in { from { opacity: 0; transform: translateY(-4px); } }
 @media (prefers-reduced-motion: reduce) { .t li { animation: none !important; } }
