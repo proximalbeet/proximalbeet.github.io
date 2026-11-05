@@ -308,6 +308,7 @@ footer a { color: var(--ink-2); }
   .bld:has(#t-app:checked):has(#p-quote:checked) .t-quote,
   .bld:has(#t-app:checked):has(#p-intake:checked) .t-intake,
   .bld:has(#t-app:checked):has(#p-photo:checked) .t-photo,
+  .bld:has(#t-app:checked):has(#p-own:checked) .t-own,
   .bld:has(#t-custom:checked) .t-custom { display: block; }
   .bld:has(#t-cust:checked):has(#c-both:checked) .sh, .bld:has(#t-team:checked):has(#m-both:checked) .sh { display: grid; }
   /* more than one type: each day gets its header, and a note that points at another picked agent goes */
